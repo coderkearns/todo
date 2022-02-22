@@ -1,0 +1,100 @@
+body, html {
+    /* outer semantics */
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    /* inner semantics */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* colors */
+    background-color: var(--background);
+    color: var(--foreground);
+
+    /* text */
+    font-family: "Operator Mono", monospace;
+    font-weight: 300;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-width: 600px;
+}
+
+
+@media screen and (max-width: 600px) {
+    body {
+        width: calc(100% - 4rem);
+        padding: 0 2rem;
+    }
+}
+
+#content {
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Operator Mono Book", monospace;
+    font-weight: 800;
+    font-style: italic;
+    color: var(--purple);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#todos {
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#form {
+    display: inline-block;
+    width: 100%;
+}
+
+#form-todo {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--purple);
+    background: none;
+    outline: none;
+    padding-left: 0;
+
+    color: var(--foreground);
+
+    font-family: "Operator Mono", monospace;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+#form-todo:focus, #form-todo:hover {
+    background-color: var(--purple);
+    color: var(--background);
+    /* placeholder */
+}
+
+#form-todo:focus::-webkit-input-placeholder, #form-todo:hover::-webkit-input-placeholder {
+        color: var(--background);
+    }
+
+.todo:focus, .todo:hover {
+    background-color: var(--purple);
+    color: var(--background);
+    outline: none;
+}
+
+.todo-checked {
+    text-decoration: line-through;
+}
